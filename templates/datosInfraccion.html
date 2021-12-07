@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Title</title>
+    <link th:href="@{/css/authentication.css}" rel="stylesheet" />
+    <link th:href="@{/css/header-footer.css}" rel="stylesheet" />
+    <link th:href="@{/css/ofertas.css}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/3dc5764727.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="cabecera">
+    <header>
+        <div class="encabezado">
+            JAVA SOBRE WEB
+        </div>
+    </header>
+</div>
+<div class="contenido">
+    <div class="register">
+        DATOS DE LAS INFRACCIONES DEL USUARIO
+    </div>
+    <div class="contenedor-tarjetas" id="contenedor-tarjetas">
+        <button class="tarjeta" th:each="dato:${datosInfraccions}">
+            <div class="titulo">Datos de  infracción</div>
+            <div class="infraccion">
+                <div class="descripcion-infraccion" th:text="${dato.descripcion}">Descripcion</div>
+            </div>
+            <div class="titulo">Fecha</div>
+            <div class="detalles-uno">
+                <div class="fecha" th:text="${dato.fecha}">Fecha</div>
+            </div>
+            <div class="titulo">Legajo del inspector</div>
+            <div class="detalles-uno">
+                <div class="legajo" th:text="${dato.legajoDeInspector}">Legajo</div>
+            </div>
+            <div class="titulo">Calles</div>
+            <div class="detalles-uno">
+                <div class="calle" th:text="${dato.calles}">Valor</div>
+            </div>
+            <div class="titulo">Motivo</div>
+            <div class="detalles-uno">
+                <div class="motivo" th:text="${dato.motivo}">Motivo</div>
+            </div>
+            <div class="titulo">DNI del infractor</div>
+            <div class="detalles-uno">
+                <div class="motivo" th:text="${dato.dniInfractor}">Motivo</div>
+            </div>
+        </button>
+
+    </div>
+</div>
+
+<footer>
+    <p>Aplicaciones Java Sobre Web</p>
+</footer>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+</body>
+</html>
